@@ -1,5 +1,4 @@
 # DI
-
 ## Bean
 DIコンテナに格納されるオブジェクト。JavaBeansというわけではない。
 暗黙的にインタフェース。
@@ -51,37 +50,5 @@ public class SampleClass {
 ```
 
 # MVC
-
-```mermaid
-classDiagram
-
-class 要求 {
-	URL
-	GETパラメータ
-	POSTパラメータ
-}
-class Model {
-	応答で使うデータ
-	
-}
-class ユーザデータ
-class コントローラ {
-	+ハンドラ()
-}
-class 応答 {
-	テンプレートHTML
-}
-
-要求 --> ユーザデータ : URLやパラメータを解釈して格納
-Model o-- ユーザデータ : Modelに取り込まれる
-Model <-- 応答 : 参照して各種置き換え
-要求 --> コントローラ : URLのマッピングに\n紐づいた\nハンドラ呼び出し
-コントローラ <-- ユーザデータ : 引数で渡す
-コントローラ -- Model : 応答で追加で使いたい\n情報があれば\n適宜追加
-コントローラ --> 応答 : 応答で使うテンプレートを返す
-note for コントローラ "@Controller\n(クラス)\n要求を\n受け付ける\nクラス"
-note for コントローラ "@RequstMapping\n(メソッド)\nURLや\nメソッド(GETなど)\nの紐づけ"
-note for コントローラ "@ModelAttribute\n(引数)\nユーザデータ\nとの紐づけ"
-note for ユーザデータ "@Data\n(クラス)"
-
-```
+[[Spring boot MVC.canvas|Spring boot MVC]]
+![[Spring boot MVC.png]]

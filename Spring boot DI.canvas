@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"295e71825796aa4e","type":"text","text":"```\n@Controller\nclass DemoController\n```\n","x":46,"y":-420,"width":315,"height":114},
+		{"id":"32f01ace33001336","type":"text","text":"```\n@SpringBootApplication\nclass DemoApplication\n```\n","x":46,"y":-640,"width":315,"height":120}
+	],
+	"edges":[
+		{"id":"af3fea687d185050","fromNode":"32f01ace33001336","fromSide":"bottom","toNode":"295e71825796aa4e","toSide":"top","label":"生成(Bean)"}
+	]
+}

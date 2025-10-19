@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"8ff9c7144ea9aea6","type":"text","text":"要求","x":-805,"y":-41,"width":140,"height":62},
+		{"id":"6b38bc39073639d4","type":"text","text":"```\n@GetMapping(\"対応するURL\")など\nString inputForm\n  @RequestParam(\"arg\") String var,  // URLパラメータの場合\n  @ModelAtrribute(\"user\") User usr, // \n  Model model                       // 情報の受け渡しの親玉\n) {\n\t// 応答への情報受け渡し\n    model.addAttribute(\"parm\", arg);\n    model.addAttribute(\"message\", \"Hello, World!\");\n    \n    // 入力画面表示\n    return \"inputForm\"; // resources/templetes配下のファイルに対応\n}\n```\n","x":-97,"y":-200,"width":600,"height":380},
+		{"id":"4be1d17cb442e15a","type":"text","text":"Model","x":-540,"y":60,"width":270,"height":60},
+		{"id":"c2db4958e0783bc3","type":"text","text":"@RequestParam(\"arg\") var\n要求パラメータを解析して格納","x":-540,"y":-140,"width":270,"height":82},
+		{"id":"6445257b4e99f923","type":"text","text":"addAttributeで追加\nparm、message\n\n@ModelAttribute(\"user\")で追加\nusr","x":-540,"y":180,"width":270,"height":160},
+		{"id":"08a4f04cd749b4a7","type":"text","text":"resouces/templates\ninputForm.html\n```\n<p th:text=\"${arg}\">aaa</p>>\nform th:action=\"\" method=\"POST\" th:object=\"${user}\"\ninput type=\"text\" th:field=\"*{Id}\"\n```\n","x":-540,"y":409,"width":500,"height":198},
+		{"id":"b20a2dcccf704a01","type":"text","text":"応答","x":-800,"y":483,"width":140,"height":50}
+	],
+	"edges":[
+		{"id":"a20c4ef2b0b15991","fromNode":"8ff9c7144ea9aea6","fromSide":"right","toNode":"6b38bc39073639d4","toSide":"left","label":"マッピング"},
+		{"id":"0c89dd2a97336412","fromNode":"8ff9c7144ea9aea6","fromSide":"right","toNode":"4be1d17cb442e15a","toSide":"left","label":"POST内容解析"},
+		{"id":"7e98fda691ebbf30","fromNode":"4be1d17cb442e15a","fromSide":"right","toNode":"6b38bc39073639d4","toSide":"left","label":"引数"},
+		{"id":"2995518e02d7cb06","fromNode":"b20a2dcccf704a01","fromSide":"top","toNode":"8ff9c7144ea9aea6","toSide":"bottom","label":"フォームからPOSTなど"},
+		{"id":"ff63147091b8e0ed","fromNode":"8ff9c7144ea9aea6","fromSide":"right","toNode":"c2db4958e0783bc3","toSide":"left","label":"URL解析"},
+		{"id":"9313582304df1493","fromNode":"c2db4958e0783bc3","fromSide":"right","toNode":"6b38bc39073639d4","toSide":"left","label":"引数"},
+		{"id":"7bd59acddc2764eb","fromNode":"6b38bc39073639d4","fromSide":"bottom","toNode":"08a4f04cd749b4a7","toSide":"right","label":"応答内容の指定"},
+		{"id":"14b2e7efd30dc0b3","fromNode":"08a4f04cd749b4a7","fromSide":"top","toNode":"6445257b4e99f923","toSide":"bottom","label":"参照"},
+		{"id":"2360ad4098002347","fromNode":"4be1d17cb442e15a","fromSide":"bottom","toNode":"6445257b4e99f923","toSide":"top","label":"所有"},
+		{"id":"41e5267fbbf1901d","fromNode":"6b38bc39073639d4","fromSide":"bottom","toNode":"6445257b4e99f923","toSide":"right","label":"属性追加、内容更新"},
+		{"id":"218d5a11a21a1f01","fromNode":"08a4f04cd749b4a7","fromSide":"left","toNode":"b20a2dcccf704a01","toSide":"right"}
+	]
+}
