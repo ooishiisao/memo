@@ -50,5 +50,6 @@ public class SampleClass {
 ```
 
 # MVC
-[[Spring boot MVC.canvas|Spring boot MVC]]
-![[Spring boot MVC.png]]
+![[Spring_boot_MVC.canvas|Spring_boot_MVC]]
+[Spring_boot_MVC.png](Spring_boot_MVC.png)
+
